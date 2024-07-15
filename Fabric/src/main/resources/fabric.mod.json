@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "easyelevators",
+  "version": "1.0",
+
+  "name": "Easy Elevators",
+  "description": "Easily go up and down fast via multiblock elevators! Highly configurable and using vanilla resources only.",
+  "authors": [ "Rick South" ],
+  "contact": {
+    "homepage": "https://serilum.com/mod/easy-elevators",
+    "sources": "https://github.com/Serilum/Easy-Elevators",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Easy%20Elevators"
+  },
+
+  "license": "All Right Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "com.natamus.easyelevators.ModFabric" ], "modmenu": [ "com.natamus.easyelevators.fabric.config.IntegrateModMenu" ] },
+  "mixins": [
+	"easyelevators_fabric.mixins.json"
+  ],
+  "mixins": [
+    "easyelevators.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": ">=1.20",
+    "java": ">=21",
+    "collective": ">=7.71"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "Donate <3" : "https://ricksouth.com/donate"
+      }
+    }
+  },
+
+  "contributors": [
+	  " ",
+	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
+	  " ",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  " ",
+	  "Membership sponsors:",
+	  " Alister",
+	  " Andrean Olgo",
+	  " aternosorg",
+	  " BirdieMiner",
+	  " Cherriesaurus",
+	  " Michael W. S.",
+	  " Shana Gitnick",
+	  " Sukhmai",
+	  " Tyler Behl"
+  ]
+}
