@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Easy%20Elevators"
+logoFile="icon.png"
+
+[[mods]]
+modId="easyelevators"
+version="1.1"
+displayName="Easy Elevators"
+displayURL="https://serilum.com/mod/easy-elevators"
+authors="Rick South"
+description='''Easily go up and down fast via multiblock elevators! Highly configurable and using vanilla resources only.
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, Michael W. S., Nahuel Fernandez, Shana Gitnick, Tyler Behl   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.easyelevators]]
+    modId="collective"
+    mandatory=true
+    versionRange="[7.80,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.easyelevators]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21,1.21.1]"
+    ordering="NONE"
+    side="BOTH"
