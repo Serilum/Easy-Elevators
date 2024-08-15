@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="easyelevators"
-version="1.1"
+version="1.2"
 displayName="Easy Elevators"
 displayURL="https://curseforge.com/minecraft/mc-mods/easy-elevators"
 authors="Rick South"
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.easyelevators]]
     modId="collective"
     type="required"
-    versionRange="[7.80,)"
+    versionRange="[7.81,)"
     ordering="NONE"
     side="BOTH"
 
