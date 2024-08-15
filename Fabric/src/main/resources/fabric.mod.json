@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "easyelevators",
-  "version": "1.1",
+  "version": "1.2",
 
   "name": "Easy Elevators",
   "description": "Easily go up and down fast via multiblock elevators! Highly configurable and using vanilla resources only.",
@@ -20,16 +20,13 @@
   "mixins": [
 	"easyelevators.mixins.json"
   ],
-  "mixins": [
-    "easyelevators.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.12.5",
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.78"
+    "collective": ">=7.81"
   },
 
   "custom": {
