@@ -1,7 +1,7 @@
-package com.natamus.easyelevators.events;
+package com.serilum.easyelevators.events;
 
 import com.mojang.datafixers.util.Pair;
-import com.natamus.easyelevators.util.Util;
+import com.serilum.easyelevators.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.RelativeMovement;

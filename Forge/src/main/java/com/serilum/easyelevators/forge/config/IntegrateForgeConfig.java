@@ -1,7 +1,7 @@
-package com.natamus.easyelevators.forge.config;
+package com.serilum.easyelevators.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.easyelevators.util.Reference;
+import com.serilum.easyelevators.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

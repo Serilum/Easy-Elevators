@@ -1,8 +1,8 @@
-package com.natamus.easyelevators.util;
+package com.serilum.easyelevators.util;
 
 import com.mojang.datafixers.util.Pair;
-import com.natamus.easyelevators.config.ConfigHandler;
-import com.natamus.easyelevators.data.Variables;
+import com.serilum.easyelevators.config.ConfigHandler;
+import com.serilum.easyelevators.data.Variables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;

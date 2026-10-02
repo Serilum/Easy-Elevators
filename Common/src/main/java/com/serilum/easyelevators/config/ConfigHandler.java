@@ -1,7 +1,7 @@
-package com.natamus.easyelevators.config;
+package com.serilum.easyelevators.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.easyelevators.util.Reference;
+import com.serilum.easyelevators.util.Reference;
 
 import java.util.Arrays;
 import java.util.HashMap;

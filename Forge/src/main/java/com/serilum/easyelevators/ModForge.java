@@ -1,10 +1,10 @@
-package com.natamus.easyelevators;
+package com.serilum.easyelevators;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.easyelevators.forge.config.IntegrateForgeConfig;
-import com.natamus.easyelevators.forge.events.ForgeElevatorEvents;
-import com.natamus.easyelevators.util.Reference;
+import com.serilum.easyelevators.forge.config.IntegrateForgeConfig;
+import com.serilum.easyelevators.forge.events.ForgeElevatorEvents;
+import com.serilum.easyelevators.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;

@@ -1,9 +1,9 @@
-package com.natamus.easyelevators;
+package com.serilum.easyelevators;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.easyelevators.util.Reference;
-import com.natamus.easyelevators.util.Util;
+import com.serilum.easyelevators.util.Reference;
+import com.serilum.easyelevators.util.Util;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.minecraft.server.MinecraftServer;

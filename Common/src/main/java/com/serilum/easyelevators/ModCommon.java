@@ -1,6 +1,6 @@
-package com.natamus.easyelevators;
+package com.serilum.easyelevators;
 
-import com.natamus.easyelevators.config.ConfigHandler;
+import com.serilum.easyelevators.config.ConfigHandler;
 
 public class ModCommon {
 

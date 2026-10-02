@@ -1,6 +1,6 @@
-package com.natamus.easyelevators.mixin;
+package com.serilum.easyelevators.mixin;
 
-import com.natamus.easyelevators.events.ElevatorEvents;
+import com.serilum.easyelevators.events.ElevatorEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
