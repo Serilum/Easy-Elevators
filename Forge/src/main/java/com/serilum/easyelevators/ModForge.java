@@ -3,9 +3,7 @@ package com.serilum.easyelevators;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.serilum.easyelevators.forge.config.IntegrateForgeConfig;
-import com.serilum.easyelevators.forge.events.ForgeElevatorEvents;
 import com.serilum.easyelevators.util.Reference;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -32,7 +30,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-		MinecraftForge.EVENT_BUS.register(ForgeElevatorEvents.class);
+
 	}
 
 	private static void setGlobalConstants() {

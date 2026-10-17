@@ -1,12 +1,10 @@
 package com.serilum.easyelevators.util;
 
+import com.natamus.collective.functions.ConfigFunctions;
 import com.mojang.datafixers.util.Pair;
 import com.serilum.easyelevators.config.ConfigHandler;
-import com.serilum.easyelevators.data.Variables;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -17,51 +15,17 @@ import javax.annotation.Nullable;
 import java.util.*;
 
 public class Util {
-	public static final List<Block> elevatorBlocks = new ArrayList<>();
-	public static final List<Block> elevatorChains = new ArrayList<>();
-
-	public static void processConfigBlocks(Level level) {
-		if (Variables.processedConfigBlocks) {
-			return;
-		}
-		Variables.processedConfigBlocks = true;
-
-		Registry<Block> blockRegistry = level.registryAccess().registryOrThrow(Registries.BLOCK);
-
-		for (String rawElevatorBlock : ConfigHandler.elevatorBlocks.split(",")) {
-			ResourceLocation rawElevatorBlockRL = ResourceLocation.tryParse(rawElevatorBlock.strip());
-
-			if (blockRegistry.containsKey(rawElevatorBlockRL)) {
-				Block elevatorBlock = blockRegistry.get(rawElevatorBlockRL);
-				if (!elevatorBlocks.contains(elevatorBlock)) {
-					elevatorBlocks.add(elevatorBlock);
-				}
-			}
-		}
-
-		for (String rawElevatorChain : ConfigHandler.elevatorChains.split(",")) {
-			ResourceLocation rawElevatorChainRL = ResourceLocation.tryParse(rawElevatorChain.strip());
-
-			if (blockRegistry.containsKey(rawElevatorChainRL)) {
-				Block elevatorChain = blockRegistry.get(rawElevatorChainRL);
-				if (!elevatorChains.contains(elevatorChain)) {
-					elevatorChains.add(elevatorChain);
-				}
-			}
-		}
-	}
-
 	public static boolean isElevatorBlock(Level level, BlockPos blockPos) {
 		return isElevatorBlock(level.getBlockState(blockPos).getBlock());
 	}
 	public static boolean isElevatorBlock(Block block) {
-		return elevatorBlocks.contains(block);
+		return ConfigFunctions.isInIdList(ConfigHandler.elevatorBlocks, BuiltInRegistries.BLOCK.getKey(block).toString());
 	}
 	public static boolean isElevatorChain(Level level, BlockPos blockPos) {
 		return isElevatorChain(level.getBlockState(blockPos).getBlock());
 	}
 	public static boolean isElevatorChain(Block block) {
-		return elevatorChains.contains(block);
+		return ConfigFunctions.isInIdList(ConfigHandler.elevatorChains, BuiltInRegistries.BLOCK.getKey(block).toString());
 	}
 
 	public static Pair<BlockPos, BlockPos> getElevatorData(Level level, Player player, BlockPos blockPos) {

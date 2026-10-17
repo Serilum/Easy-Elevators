@@ -10,8 +10,8 @@ import java.util.List;
 public class ConfigHandler extends DuskConfig {
 	public static HashMap<String, List<String>> configMetaData = new HashMap<String, List<String>>();
 
-	@Entry public static String elevatorBlocks = "minecraft:iron_block,minecraft:copper_block";
-	@Entry public static String elevatorChains = "minecraft:chain,minecraft:end_rod";
+	@Entry(registry = "block") public static String elevatorBlocks = "minecraft:iron_block,minecraft:copper_block";
+	@Entry(registry = "block") public static String elevatorChains = "minecraft:chain,minecraft:end_rod";
 	@Entry(min = 1, max = 33) public static int minimumElevatorSize = 3;
 	@Entry(min = 1, max = 33) public static int maximumElevatorSize = 5;
 	@Entry public static boolean elevatorMustBeConnectedViaChains = true;
