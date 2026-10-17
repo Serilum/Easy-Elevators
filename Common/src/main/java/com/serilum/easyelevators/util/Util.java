@@ -1,13 +1,10 @@
 package com.serilum.easyelevators.util;
 
+import com.natamus.collective.functions.ConfigFunctions;
 import com.mojang.datafixers.util.Pair;
 import com.serilum.easyelevators.config.ConfigHandler;
-import com.serilum.easyelevators.data.Variables;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -18,57 +15,17 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class Util {
-	public static final List<Block> elevatorBlocks = new ArrayList<>();
-	public static final List<Block> elevatorChains = new ArrayList<>();
-
-	public static void processConfigBlocks(Level level) {
-		if (Variables.processedConfigBlocks) {
-			return;
-		}
-		Variables.processedConfigBlocks = true;
-
-		Registry<Block> blockRegistry = level.registryAccess().lookupOrThrow(Registries.BLOCK);
-
-		for (String rawElevatorBlock : ConfigHandler.elevatorBlocks.split(",")) {
-			Identifier rawElevatorBlockRL = Identifier.tryParse(rawElevatorBlock.strip());
-
-			if (blockRegistry.containsKey(rawElevatorBlockRL)) {
-				Optional<Holder.Reference<Block>> elevatorBlockOptionalReference = blockRegistry.get(rawElevatorBlockRL);
-				if (elevatorBlockOptionalReference.isPresent()) {
-					Block elevatorBlock = elevatorBlockOptionalReference.get().value();
-					if (!elevatorBlocks.contains(elevatorBlock)) {
-						elevatorBlocks.add(elevatorBlock);
-					}
-				}
-			}
-		}
-
-		for (String rawElevatorChain : ConfigHandler.elevatorChains.split(",")) {
-			Identifier rawElevatorChainRL = Identifier.tryParse(rawElevatorChain.strip());
-
-			if (blockRegistry.containsKey(rawElevatorChainRL)) {
-				Optional<Holder.Reference<Block>> elevatorChainOptionalReference = blockRegistry.get(rawElevatorChainRL);
-				if (elevatorChainOptionalReference.isPresent()) {
-					Block elevatorChain = elevatorChainOptionalReference.get().value();
-					if (!elevatorChains.contains(elevatorChain)) {
-						elevatorChains.add(elevatorChain);
-					}
-				}
-			}
-		}
-	}
-
 	public static boolean isElevatorBlock(Level level, BlockPos blockPos) {
 		return isElevatorBlock(level.getBlockState(blockPos).getBlock());
 	}
 	public static boolean isElevatorBlock(Block block) {
-		return elevatorBlocks.contains(block);
+		return ConfigFunctions.isInIdList(ConfigHandler.elevatorBlocks, BuiltInRegistries.BLOCK.getKey(block).toString());
 	}
 	public static boolean isElevatorChain(Level level, BlockPos blockPos) {
 		return isElevatorChain(level.getBlockState(blockPos).getBlock());
 	}
 	public static boolean isElevatorChain(Block block) {
-		return elevatorChains.contains(block);
+		return ConfigFunctions.isInIdList(ConfigHandler.elevatorChains, BuiltInRegistries.BLOCK.getKey(block).toString());
 	}
 
 	public static Pair<BlockPos, BlockPos> getElevatorData(Level level, Player player, BlockPos blockPos) {

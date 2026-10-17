@@ -3,11 +3,7 @@ package com.serilum.easyelevators;
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.serilum.easyelevators.util.Reference;
-import com.serilum.easyelevators.util.Util;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLevelEvents;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
 
 public class ModFabric implements ModInitializer {
 	
@@ -26,9 +22,7 @@ public class ModFabric implements ModInitializer {
 	}
 
 	private void loadEvents() {
-		ServerLevelEvents.LOAD.register((MinecraftServer server, ServerLevel level) -> {
-			Util.processConfigBlocks(level);
-		});
+
 	}
 
 	private static void setGlobalConstants() {
